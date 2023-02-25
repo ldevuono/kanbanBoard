@@ -29,7 +29,7 @@ const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination)
     return;
   const { source, destination } = result;
-  if (source.droppableId != destination.droppableId) {
+  if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
     const sourceItems = [...sourceColumn.items];
@@ -83,10 +83,11 @@ function App() {
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                         style={{
-                          background: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
+                          background: snapshot.isDraggingOver ? '#9d8abf' : '#c4c1e0',
                           padding: 4,
                           width: 250,
-                          minHeight: 500
+                          minHeight: 500,
+                          borderRadius: 35
                         }}
                       >
                         {column.items.map((item, index) => {
@@ -102,8 +103,8 @@ function App() {
                                       padding: 16,
                                       margin: '0 0 8px 0',
                                       minHeight: '50px',
-                                      backgroundColor: snapshot.isdragging ? '#263b4a' : '#456c86',
-                                      color: 'white',
+                                      backgroundColor: snapshot.isDragging ? '#cbaacb' : '#7c73e6',
+                                      borderRadius: 35,
                                       ...provided.draggableProps.style
                                     }}
                                   >
